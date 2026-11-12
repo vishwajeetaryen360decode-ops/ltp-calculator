@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: algo-ltp
+    runtime: node
+    plan: starter            # free plan 15 min idle pe sleep ho jata hai -> live feed toot'ta hai. Starter ($7) recommended.
+    buildCommand: npm install --omit=dev
+    startCommand: npm start
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: APP_SECRET
+        generateValue: true
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_KEY
+        sync: false
+      - key: ADMIN_EMAILS
+        sync: false
+      - key: ALLOWED_EMAILS
+        sync: false
+      - key: FYERS_APP_ID
+        sync: false
+      - key: FYERS_SECRET
+        sync: false
+      - key: PUBLIC_URL
+        sync: false

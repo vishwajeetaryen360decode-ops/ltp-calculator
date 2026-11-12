@@ -1,0 +1,21 @@
+{
+  "name": "algo-ltp-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WebSocket option-chain backend (Fyers + Deribit crypto + Kotak Neo session) with Supabase auth",
+  "main": "src/server.js",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --env-file=.env src/server.js",
+    "test": "node test/smoke.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.4",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "fyers-api-v3": "^1.0.0",
+    "helmet": "^7.1.0",
+    "ws": "^8.18.0"
+  }
+}
